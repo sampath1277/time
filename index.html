@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Time</title>
+
+</head>
+<body>
+<h1><span>Time::</span></h1>
+
+<style>
+h1 {
+  font-size: 100px;
+  color:red;
+  
+}
+h2 {
+  font-size: 140px;
+  color:blue;
+  font-family:verdana;
+}
+
+
+</style>
+
+<script type ="text/javascript">
+
+   
+  setInterval(myTimer, 1000);
+
+	function myTimer() {
+ 		var time = new Date().toLocaleTimeString();
+		document.getElementById("demo").innerHTML = time;
+		}
+
+myTimer();
+</script> 
+
+<h2 id="demo"> </h2>
+</body>
+</html>
+
