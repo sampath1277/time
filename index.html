@@ -4,24 +4,98 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Time</title>
 
+
 </head>
-<body>
-<h1><span>Time::</span></h1>
+<body id="bgclor" style="background-color:#DBB98F" >
+<h1><span id="dataTimeText">Date and Time::</span></h1>
+
+<div font-size: 30px;>  <p> Select the color of text </p> 
+
+<input type="checkbox" id="blue"  onchange="changeClor(this)">
+<label for="blueColor"> Blue</label>
+
+<input type="checkbox" id="tela" onchange="changeClor(this)">
+<label for="orangeColor"> tela</label>
+
+<input type="checkbox" id="green"  onchange="changeClor(this)">
+<label for="greenColor"> Green</label>
+
+<input type="checkbox" id="navy"  onchange="changeClor(this)">
+<label for="blueColor"> Navy</label><br><br>
+
+
+
+</div>
+
+
+
+
+<script>
+function changeClor(checkboxElem) {
+
+var blueClr="blue";
+var telaClr="tela";
+var greenClr="green";
+var navyClr="navy";
+
+
+    if (checkboxElem.checked && checkboxElem.id == blueClr) {
+        applyColor(blueClr);
+		
+    } 
+	
+	else if(checkboxElem.checked && checkboxElem.id == telaClr){
+	
+		applyColor("#00FA9A");
+	}
+	else if(checkboxElem.checked && checkboxElem.id == greenClr){
+	
+		applyColor(greenClr);
+	}
+	else if(checkboxElem.checked && checkboxElem.id == navyClr){
+	
+		applyColor(navyClr);
+	}
+	else {
+         applyColor("#96351E");
+    }
+}
+
+function applyColor(colr){
+		document.getElementById("time").style.color = colr;
+		document.getElementById("date").style.color = colr;
+		document.getElementById("dataTimeText").style.color = colr;
+}
+
+
+</script>
+
 
 <style>
 h1 {
-  font-size: 100px;
-  color:red;
+  font-size: 40px;
+  color:#96351E;
   
 }
+
+h3 {
+  font-size: 60px;
+  color:#96351E;
+  font-family:Arial-black;
+}
 h2 {
-  font-size: 140px;
-  color:blue;
+  font-size: 70px;
+  color:#96351E;
   font-family:verdana;
 }
 
 
+
+
 </style>
+
+<h2 id="time"> </h2>
+<h3 id="date"> </h2>
 
 <script type ="text/javascript">
 
@@ -29,14 +103,20 @@ h2 {
   setInterval(myTimer, 1000);
 
 	function myTimer() {
- 		var time = new Date().toLocaleTimeString();
-		document.getElementById("demo").innerHTML = time;
+	
+	var date = new Date();
+	document.getElementById("time").innerHTML = date.toLocaleTimeString();
+	document.getElementById("date").innerHTML = date.toDateString();
+		
 		}
 
+
 myTimer();
+
 </script> 
 
-<h2 id="demo"> </h2>
+
+
 </body>
 </html>
 
